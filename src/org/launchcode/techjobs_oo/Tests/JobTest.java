@@ -13,6 +13,7 @@ public class JobTest {
     Job test_job;
     Job test_job2;
     Job test_job3;
+    Job test_job4;
 
     @Before
     public void createJobObject() {
@@ -30,10 +31,16 @@ public class JobTest {
 
     }
 
+    @Before
+    public void createJobObject4() {
+        test_job4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+    }
+
     @Test
     public void testSettingJobId() {
         Assert.assertEquals(false, test_job.equals(test_job2));
-        }
+    }
 
     @Test
     public void testJobConstructorSetsAllFields() {
@@ -47,7 +54,11 @@ public class JobTest {
         Assert.assertEquals("Desert", test_job3.getLocation().toString());
         Assert.assertEquals("Quality control", test_job3.getPositionType().toString());
         Assert.assertEquals("Persistence", test_job3.getCoreCompetency().toString());
+    }
 
+    @Test
+    public void testJobsForEquality() {
+        Assert.assertEquals(false, test_job3.equals(test_job4));
     }
 }
 
