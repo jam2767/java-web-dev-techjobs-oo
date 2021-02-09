@@ -14,6 +14,7 @@ public class JobTest {
     Job test_job2;
     Job test_job3;
     Job test_job4;
+    Job test_job5;
 
     @Before
     public void createJobObject() {
@@ -37,6 +38,13 @@ public class JobTest {
 
     }
 
+//    @Before
+//    public void createJobObject5() {
+//        test_job5 = new Job(new Employer(), new);
+//    }
+
+
+
     @Test
     public void testSettingJobId() {
         Assert.assertEquals(false, test_job.equals(test_job2));
@@ -44,7 +52,7 @@ public class JobTest {
 
     @Test
     public void testJobConstructorSetsAllFields() {
-        Assert.assertEquals(2, test_job3.getId());
+        Assert.assertEquals(3, test_job3.getId());
         Assert.assertEquals(true, test_job3.getEmployer() instanceof Employer);
         Assert.assertEquals(true, test_job3.getLocation() instanceof Location);
         Assert.assertEquals(true, test_job3.getPositionType() instanceof PositionType);
@@ -59,6 +67,21 @@ public class JobTest {
     @Test
     public void testJobsForEquality() {
         Assert.assertEquals(false, test_job3.equals(test_job4));
+    }
+
+    @Test
+    public void testToStringReturnsBlankLines() {
+        Assert.assertEquals("\n\n", test_job4.toString());
+    }
+
+    @Test
+    public void testToStringContainsLabelAndData() {
+        Assert.assertEquals("\nID: " + test_job4.getId() + "\nName: " + test_job4.getName() + "\nEmployer: " + test_job4.getEmployer() + "\nLocation: " + test_job4.getLocation() + "\nPosition Type: " + test_job4.getPositionType() + "\nCore Competency: " + test_job4.getCoreCompetency(), test_job4.toString());
+    }
+
+    @Test
+    public void testToStringChecksIfFieldIsEmpty() {
+        Assert.assertEquals("\nID: " + test_job2.getId() + "\nName: " + "Data not available" + "\nEmployer: " + "Data not available" + "\nLocation: " + "Data not available" + "\nPosition Type: " + "Data not available" + "\nCore Competency: " + "Data not available", test_job2.toString());
     }
 }
 
