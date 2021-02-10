@@ -1,5 +1,6 @@
 package org.launchcode.techjobs_oo;
 
+import java.lang.reflect.Field;
 import java.util.Objects;
 
 public class Job {
@@ -49,12 +50,30 @@ public class Job {
 
     @Override
     public String toString() {
-//       // return "\n\n";
-//        for (value :
-//             ) {
-//
-//        }
-        return "\n" + "ID: " + this.id + "\nName: " + this.name + "\nEmployer: " + this.employer + "\nLocation: " + this.location + "\nPosition Type: " + this.positionType + "\nCore Competency: " + this.coreCompetency;
+
+        if(name == null) {
+            name = "Data not available";
+        }
+        if(employer == null) {
+            employer = new Employer("Data not available");
+        }
+        if(location == null) {
+            location = new Location("Data not available");
+        }
+        if(positionType == null) {
+            positionType = new PositionType("Data not available");
+        }
+        if(coreCompetency == null) {
+            coreCompetency = new CoreCompetency("Data not available");
+        }
+
+        return "\n" + "ID: " + id
+                + "\nName: " + name
+                + "\nEmployer: " + employer
+                + "\nLocation: " + location
+                + "\nPosition Type: " + positionType
+                + "\nCore Competency: " + coreCompetency +
+                "\n";
     }
 
 

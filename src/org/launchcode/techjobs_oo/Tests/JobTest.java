@@ -76,12 +76,12 @@ public class JobTest {
 
     @Test
     public void testToStringContainsLabelAndData() {
-        Assert.assertEquals("\nID: " + test_job4.getId() + "\nName: " + test_job4.getName() + "\nEmployer: " + test_job4.getEmployer() + "\nLocation: " + test_job4.getLocation() + "\nPosition Type: " + test_job4.getPositionType() + "\nCore Competency: " + test_job4.getCoreCompetency(), test_job4.toString());
+        Assert.assertEquals("\nID: " + test_job4.getId() + "\nName: " + test_job4.getName() + "\nEmployer: " + test_job4.getEmployer() + "\nLocation: " + test_job4.getLocation() + "\nPosition Type: " + test_job4.getPositionType() + "\nCore Competency: " + test_job4.getCoreCompetency() + "\n", test_job4.toString());
     }
 
     @Test
     public void testToStringChecksIfFieldIsEmpty() {
-        Assert.assertEquals("\nID: " + test_job2.getId() + "\nName: " + "Data not available" + "\nEmployer: " + "Data not available" + "\nLocation: " + "Data not available" + "\nPosition Type: " + "Data not available" + "\nCore Competency: " + "Data not available", test_job2.toString());
+        Assert.assertEquals("\nID: " + test_job2.getId() + "\nName: " + "Data not available" + "\nEmployer: " + "Data not available" + "\nLocation: " + "Data not available" + "\nPosition Type: " + "Data not available" + "\nCore Competency: " + "Data not available" + "\n", test_job2.toString());
     }
 }
 
