@@ -51,19 +51,19 @@ public class Job {
     @Override
     public String toString() {
 
-        if(name == null) {
+        if(name == null || name.equals("")) {
             name = "Data not available";
         }
-        if(employer == null) {
+        if(employer == null || employer.toString().equals("")) {
             employer = new Employer("Data not available");
         }
-        if(location == null) {
+        if(location == null || location.toString().equals("")) {
             location = new Location("Data not available");
         }
-        if(positionType == null) {
+        if(positionType == null || positionType.toString().equals("")) {
             positionType = new PositionType("Data not available");
         }
-        if(coreCompetency == null) {
+        if(coreCompetency == null || coreCompetency.toString().equals("")) {
             coreCompetency = new CoreCompetency("Data not available");
         }
 
