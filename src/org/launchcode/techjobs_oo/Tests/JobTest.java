@@ -69,10 +69,10 @@ public class JobTest {
         Assert.assertEquals(false, test_job3.equals(test_job4));
     }
 
-    @Test
-    public void testToStringReturnsBlankLines() {
-        Assert.assertEquals("\n\n", test_job4.toString());
-    }
+//    @Test
+//    public void testToStringReturnsBlankLines() {
+//        Assert.assertEquals("\n\n", test_job4.toString());
+//    }
 
     @Test
     public void testToStringContainsLabelAndData() {
